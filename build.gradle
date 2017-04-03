@@ -1,0 +1,49 @@
+/*Copyright 2017 Mikey Sanchez
+ *
+ *Licensed under the Apache License, Version 2.0 (the "License");
+ *you may not use this file except in compliance with the License.
+ *You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ *Unless required by applicable law or agreed to in writing, software
+ *distributed under the License is distributed on an "AS IS" BASIS,
+ *WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *See the License for the specific language governing permissions and
+ *limitations under the License.
+*/
+buildscript {
+    repositories {
+        jcenter()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+}
+
+// Apply the groovy plugin to add support for Groovy
+plugins {
+    id 'java-gradle-plugin'
+    id 'groovy'
+    id 'java'
+}
+
+// In this section you declare where to find the dependencies of your project
+repositories {
+    // Use jcenter for resolving your dependencies.
+    // You can declare any Maven/Ivy/file repository here.
+    jcenter()
+    mavenCentral()
+}
+
+dependencies {
+    // Use the latest Groovy version for building this library
+    compile 'org.codehaus.groovy:groovy-all:2.4.7'
+    // Use the Gradle API to create plugin and custom tasks
+    compile gradleApi()
+    testCompile 'junit:junit:4.12'
+}
+
+group 'com.mikeysanchez'
+version '0.1-SNAPSHOT'
+
